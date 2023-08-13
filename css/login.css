@@ -100,3 +100,16 @@ a:hover {
 i:active{
     transform: translateY(5px);
 }
+
+@media(max-width: 480px){
+    form{
+        scale: .7;
+        margin: -39px;
+        right: 3%;
+    }
+}
+@media(max-width: 220px){
+    form{
+        top: 0;
+    }
+}
