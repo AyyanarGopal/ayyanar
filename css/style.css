@@ -5,7 +5,7 @@
 }
 
 .container {
-    
+
     background-size: cover;
     height: 100vh;
     position: relative;
@@ -13,7 +13,7 @@
     background-color: transparent;
 }
 
-.container:after{
+.container:after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -26,12 +26,12 @@
     left: 0;
 }
 
-@keyframes rotate{
-    0%{
+@keyframes rotate {
+    0% {
         transform: rotate(0deg) scale(5);
     }
-   
-    100%{
+
+    100% {
         transform: rotate(360deg) scale(5);
     }
 }
@@ -58,6 +58,10 @@ h1 {
     position: relative;
 }
 
+.kee{
+    position: relative;
+}
+
 .item i {
     position: absolute;
     left: 9px;
@@ -65,23 +69,37 @@ h1 {
     top: 10px;
 }
 
-.item1 input {
-    padding: 11px 0px 11px 29px;
+.item1{
+    display: flex;
+    justify-content: space-between;
 }
 
-::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
-    appearance: none;
+.item1 div {
+    flex-basis: 48%;
 }
 
-input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="date"] {
+input[type="text"]{
     padding: 11px 0 11px 29px;
+    width: 100%;
     border: none;
     border-radius: 5px;
     outline: none;
 }
 
-input[type="number"], input[type="email"], input[type="password"], input[type="date"] {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
     width: 100%;
+    padding: 11px 0 11px 29px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
 }
 
 input[type=button] {
@@ -95,19 +113,24 @@ input[type=button] {
     cursor: pointer;
 }
 
-.radio span {
-    border: 1px solid white;
-    padding: 10px 20px;
-    margin: 4px 7px;
-    display: inline-block;
+.radio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.sign {
+.radio div {
+    border: 1px solid white;
+    padding: 10px 20px;
+    flex: 50%;
+}
+
+.sign, .checktick {
     text-align: center;
 }
 
 .already {
-    margin: 17px;
+    margin: 17px 0;
     text-align: center;
 }
 
@@ -117,8 +140,33 @@ a {
     font-weight: bold;
 }
 
-input[type="button"]:active{
-transform: translateY(5px);
-box-shadow: 2px 2px 1px 0px black;
+input[type="button"]:active {
+    transform: translateY(5px);
+    box-shadow: 2px 2px 1px 0px black;
 }
 
+@media(max-width: 992px) {
+    form {
+        scale: .8;
+        top: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    form {
+        scale: .6;
+        right: 0;
+    }
+}
+
+@media(max-width: 480px) {
+    form {
+        margin: -60px;
+    }
+    .item1{
+        flex-direction: column;
+    }
+    .item1 div:first-child{
+        margin: 0 0 13px 0;
+    }
+}
